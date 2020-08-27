@@ -9,7 +9,7 @@ describe Princely::Pdf do
 
   it "generates a PDF from HTML" do
     pdf = Princely::Pdf.new(log_file: "/tmp/test_log").pdf_from_string html_doc
-    expect(pdf).to start_with("%PDF-1.4")
+    expect(pdf).to start_with("%PDF-1.5")
     expect(pdf.rstrip).to end_with("%%EOF")
     pdf.length > 100
   end
